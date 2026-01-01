@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors"
 import { env } from "./src/config/env";
 import { clerkMiddleware } from '@clerk/express'
-
+import userRoutes from "./src/routes/userRoutes"
+import productRoutes from "./src/routes/productRoutes"
+import commentRoutes from "./src/routes/commentRoutes"
 const app = express();
 
 app.use(cors())
@@ -20,5 +22,9 @@ app.get("/api/health", (req, res) => {
     },
   });
 });
+
+app.use("/api/users", userRoutes)
+app.use("/api/products", productRoutes)
+app.use("/api/comments", commentRoutes)
 
 app.listen(env.PORT, () => console.log("Sever running on port:", env.PORT));
