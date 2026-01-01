@@ -4,7 +4,7 @@ dotenv.config({quiet: true})
 
 export const env = {
     PORT: process.env.PORT,
-    DB: process.env.DB_URL,
+    DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
     FRONTEND_URL: process.env.FRONTEND_URL,
     CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
